@@ -19,7 +19,7 @@ const dummyCaseData = [
     specialIns: "N/A",
     ibaInfo: "THIS IS THE IBA INFO",
     trackNum: "11112222333333",
-    notes: "these are my notes"
+    notes: "these are my notes\nI have lots of notes\nI want them to appear on multiple lines\nAnd also test the scrolling ability of the slider div\nSo I added all these newlines\nthese are my notes\nI have lots of notes\nI want them to appear on multiple lines\nAnd also test the scrolling ability of the slider div\nSo I added all these newlines\nthese are my notes\nI have lots of notes\nI want them to appear on multiple lines\nAnd also test the scrolling ability of the slider div\nSo I added all these newlines"
   },
   {
     caseID: "45678-45678-4g425y24yqeh",
