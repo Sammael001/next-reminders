@@ -1,0 +1,74 @@
+.container {
+  margin-top: 4rem; /* mandatory to prevent content from being hidden under navbar */
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.title {
+  text-align: center;
+}
+.formContainer {
+
+}
+.addNewForm {
+  border-radius: 0.5rem;
+  background-color: #e6e6e6;
+  border: 1px solid #404040;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .2);
+  padding: 1rem;
+  max-width: 90vw;
+  min-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.addNewForm > label > input,
+.addNewForm > label > select,
+.addNewForm > label > textarea {
+  margin: 0.1rem;
+  padding: 0.1rem;
+  font-size: 1rem;
+}
+
+.addNewForm > label {
+  font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+}
+.lgTextarea {
+  width: 90%;
+}
+.lgInput {
+  width: 80%;
+}
+.medInput {
+  width: 60%;
+}
+.myHr {
+  width: 100%;
+}
+.redSpan {
+  color: #e60000;
+}
+
+.bluButn {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.2rem;
+  border: none;
+  color: black;
+  border: 2px solid #000099;
+  background-color: #99ccff;
+  box-shadow: -2px -2px 3px inset #0052cc, 3px 3px 4px inset #e6f2ff;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin: 1rem auto;
+}
+.bluButn:hover {
+  background-color: #0052cc;
+  color: white;
+}

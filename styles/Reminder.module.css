@@ -1,5 +1,3 @@
-/*  TO DO: add media queries limiting the # of remBody divs per row, when on smaller widths */
-/* ...OR... don't transition width at all? have child and parent confined to same width */
 
 /* SIX (6) steps for smoothly expanding/collapsing parent + child */
 
@@ -12,16 +10,17 @@
   background-color: #e6e6e6;
   border: 1px solid #404040;
   box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .2);
-  /* transition: all 0.7s linear; /* 1) give base parent class a transition prop */ 
+  transition: all 0.7s linear; /* 1) give base parent class a transition prop */
+  min-width: 300px;
 }
 .remBody > p {
-  margin: 0.5rem;
+  margin: 0.25rem;
 }
 .parentOpenSlide { /* 2) class selectively applies to parent when child is open, sets width (so parent can widen smoothly) */
-  /* width: 45%; */
+  max-width: 50%;
 }
 .parentClosedSlide { /* 3) class selectively applies to parent when child is closed, sets width (so parent can narrow smoothly) */
-  /* width: 30%; */
+  max-width: 30%;
 }
 
           /* CHILD (slider menu) classes */
@@ -33,13 +32,13 @@
   transition: all 0.7s linear;  /* 4) give base child class a transition prop */
 }
 .slideDefaults > p {
-  margin: 0.25rem;
+  margin: 0.15rem;
 }
 .showSlide { /* 5) class selectively applies to child when it's open (sets max-height, max-width and overflow-y: scroll) */
   white-space: pre-wrap;
-  max-height: 400px;
+  max-height: 450px;
   max-width: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .hideSlide { /* 6) class selectively applies to child when it's closed (sets max-height, max-width to 0 and overflow: hidden)  */
   max-height: 0;
@@ -56,7 +55,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .iconButn {
   font-size: 1.5rem;
@@ -67,4 +66,11 @@
   color: #0000ff;
   cursor: pointer;
   transform: scale(1.2);
+}
+.myHr {
+  width: 100%;
+}
+.dottedHr {
+  width: 90%;
+  border-top: 5px dotted #4d4d4d;
 }

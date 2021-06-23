@@ -2,10 +2,6 @@
   margin-top: 3.1rem; /* mandatory to prevent content from being hidden under navbar */
   min-height: 90vh;
   padding: 0.5rem 0.5rem;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; */
   height: 90vh;
 }
 .title {

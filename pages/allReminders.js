@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 
-import styles from '../styles/allReminders.module.css';
+import styles from '../styles/AllReminders.module.css';
 
 import Reminder from "../components/Reminder";
 import { dummyCaseData } from "../vars/fillerData";
@@ -30,8 +30,8 @@ export default function AllReminders() {
         return <Reminder key={caseObj.caseID} {...caseObj}/>;
       });
     } else {
-      caseMap = <p>foo</p>;
-      console.log("foo!")
+      caseMap = <p>Something went wrong!</p>;
+      console.log("Something went wrong!")
     }
     return caseMap;
   }

@@ -31,6 +31,12 @@ export default function Reminder(props) {
     setIsOpen(currIsOpen => !currIsOpen);
   }
 
+  function goEdit(caseID){
+    console.log(`We want to edit ${caseID}`);
+    // TO DO: figure out how we can redirect to a generic EDIT page, but extract the route prop ":caseID"
+    // we will use that caseID to loop over savedReminders and extract the relevant case's data, for editing
+  }
+
   return (
     <div className={`${styles.remBody} ${isOpen ? styles.parentOpenSlide : styles.parentClosedSlide}`}>
       <p><span className={styles.fieldName}>Case #:</span> {props.caseNum}</p>
@@ -43,28 +49,34 @@ export default function Reminder(props) {
       <p><span className={styles.fieldName}>Followup Date:</span> {props.followupDate}</p>
 
       <hr/>
-
+      <div className={styles.butnHolder}>
         <span className={styles.iconButn} onClick={toggleSlide}>
           <i className={ isOpen ? "fas fa-minus-square" : "fas fa-plus-square" }></i>
         </span>
-        <span className={styles.iconButn}>
+        <span className={styles.iconButn} onClick={() => goEdit(props.caseID)}>
           <i className="fas fa-edit"></i>
         </span>
+      </div>
 
       <div className={`${styles.slideDefaults} ${isOpen ? styles.showSlide : styles.hideSlide}`}>
-        <hr/>
+        <hr className={styles.myHr}/>
         <p><span className={styles.fieldName}>Part Needed:</span> {props.partNeeded}</p>
         <p><span className={styles.fieldName}>Defective S/N:</span> {props.defectSN}</p>
         <p><span className={styles.fieldName}>Warehouse:</span> {props.warehouse}</p>
+        <hr className={styles.myHr}/>
         <p><span className={styles.fieldName}>Return:</span> {props.return}</p>
         <p><span className={styles.fieldName}>Premium:</span> {props.premium}</p>
         <p><span className={styles.fieldName}>Encrypted:</span> {props.encrypted}</p>
+        <hr className={styles.myHr}/>
         <p><span className={styles.fieldName}>Shipping Address:</span> {props.shipAddress}</p>
         <p><span className={styles.fieldName}>Contact Info:</span> {props.contactInfo}</p>
         <p><span className={styles.fieldName}>Special Ins:</span> {props.specialIns}</p>
+        <hr className={styles.myHr}/>
         <p><span className={styles.fieldName}>IBA Info:</span> {props.ibaInfo}</p>
+        <hr className={styles.myHr}/>
         <p><span className={styles.fieldName}>Tracking:</span> {props.trackNum}</p>
         <p><span className={styles.fieldName}>Notes:</span> {props.notes}</p>
+        <hr className={styles.dottedHr}/>
       </div>
     </div>
   );
