@@ -21,20 +21,23 @@
 // notes: "these are my notes"
 
 import { useState } from "react";
+import { useRouter } from "next/router";
+// import Link from "next/link";
 
 import styles from "../styles/Reminder.module.css";
 
 export default function Reminder(props) {
   const [ isOpen, setIsOpen ] = useState(false);
+  const router = useRouter();
 
   function toggleSlide(){
     setIsOpen(currIsOpen => !currIsOpen);
   }
 
-  function goEdit(caseID){
-    console.log(`We want to edit ${caseID}`);
-    // TO DO: figure out how we can redirect to a generic EDIT page, but extract the route prop ":caseID"
-    // we will use that caseID to loop over savedReminders and extract the relevant case's data, for editing
+  function goEdit(idToEdit){
+    console.log("Editing reminder with ID ", idToEdit);
+    window.localStorage.setItem("idToEdit", idToEdit);
+    router.push("/newEdit"); // redirect to newEdit page
   }
 
   return (

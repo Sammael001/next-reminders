@@ -14,3 +14,34 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+
+.memoBox {
+  position: fixed;
+  top: 100px;
+  left: 25%;
+  width: 50%;
+  z-index: 10;
+  border: 2px solid #006600;
+  background-color: #80ff80;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.memoBox > p, .memoBox > button {
+  margin: 1rem 0.5rem;
+}
+.memoBox > button {
+  border: none;
+  background-color: #80ff80;
+  color: #006600;
+  font-size: 1.75rem;
+  transition: all 0.5s linear;
+}
+.memoBox > button:hover {
+  color: #001a00;
+  transform: scale(1.2);
+  cursor: pointer;
+}

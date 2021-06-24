@@ -35,13 +35,21 @@ import { v4 as uuidv4 } from 'uuid';
 import dayjs from "dayjs";
 
 import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 import styles from "../styles/AddNew.module.css";
 
+// init empty obj with all keys we want to fill
+const blankFormObj = { caseNum: "", rmaNum: "", company: "", refID: "", nextTask: "", followupDate: "", partNeeded: "", defectSN: "", warehouse: "", return: "TBD", premium: "", encrypted: "N/A", shipAddress: "", contactInfo: "", specialIns: "", ibaInfo: "", trackNum: "", notes: "", lastUpdate: "", updateTime: "" };
+
+
 export default function AddNew(props) {
-  // init empty obj with all keys we want to fill
-  const blankFormObj = { caseNum: "", rmaNum: "", company: "", refID: "", nextTask: "", followupDate: "", partNeeded: "", defectSN: "", warehouse: "", return: "", premium: "", encrypted: "", shipAddress: "", contactInfo: "", specialIns: "", ibaInfo: "", trackNum: "", notes: "", lastUpdate: "", updateTime: "" };
-  const [formVal, setFormVal] = useState(blankFormObj); // init pcOfSt8 and state-setter with our blank form obj
+  // the useLocalStorage hook sets myReminders to the value in localStorage at key "savedReminders" (if it exists there)
+  // const [ myReminders, setMyReminders ] = useState("savedReminders", []);
+  // this hook also syncs our changes with localStorage whenever we use the state-setter setMyReminders()
+  const [ formVal, setFormVal ] = useState(blankFormObj); // init pcOfSt8 and state-setter with our blank form obj
+  const router = useRouter();
 
   // this change handler receives evt BY DEFAULT, no need to pass explicitly
   function handleChange(evt){
@@ -55,13 +63,15 @@ export default function AddNew(props) {
     let myNewCaseObj = {...formVal, caseID: `${formVal.caseNum}-${uuidv4()}`}; // generate unique ID, concat w/caseNum for caseID
     // dates are received from date input form like so: "2021-06-17", format these like "Wed Jun 17 2021"
     myNewCaseObj.followupDate = dayjs(myNewCaseObj.followupDate).format('ddd MMM D YYYY');
-    myNewCaseObj.updateTime = dayjs().valueOf(); // capture TODAY'S date/time in UTC to populate updateTime
-    console.log(myNewCaseObj);
-    // TODO: call a custom hook to pull down saved reminders arr in localStorage (if they exist)
-    // TODO: push this new case obj into saved reminders and write back into localStorage
-
-    // Custom localStorage hook:
-    // https://typeofnan.dev/using-local-storage-in-react-with-your-own-custom-uselocalstorage-hook/
+    myNewCaseObj.updateTime = dayjs().valueOf(); // capture TODAY'S date/time in UTC (ex: 1624539988406) to populate updateTime
+    // console.log(myNewCaseObj);
+    // load savedReminders from localStorage, or create a blank arr if nothing stored 
+    let mySavedRems = JSON.parse(window.localStorage.getItem("savedReminders")) || [];
+    let newCopy = [...mySavedRems, myNewCaseObj]; // add new case obj into the savedReminders copy
+    window.localStorage.setItem("savedReminders", JSON.stringify(newCopy)); // add this updated copy back into state
+    // set memo in localStorage, which will display on home page
+    window.localStorage.setItem("reminderMemo", `Saved new reminder with Case # ${myNewCaseObj.caseNum}`);
+    router.push("/allReminders"); // redirect to allReminders page
   };
 
   return (
@@ -200,7 +210,13 @@ export default function AddNew(props) {
           <input className={styles.lgInput} name="lastUpdate" type="text" value={formVal.lastUpdate} onChange={handleChange}/>
         </label>
 
-        <button className={styles.bluButn} type="submit">Submit</button>
+        <div className={styles.butnBox}>
+          <button className={styles.bluButn} type="submit">Submit</button>
+          <Link href="/">
+            <a className={styles.redButn}>Cancel</a>
+          </Link>
+        </div>
+
       </form>
 
     </div>

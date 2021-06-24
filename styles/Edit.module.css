@@ -1,0 +1,9 @@
+.container {
+  margin-top: 3.1rem; /* mandatory to prevent content from being hidden under navbar */
+  min-height: 90vh;
+  padding: 0.5rem 0.5rem;
+  height: 90vh;
+}
+.title {
+  text-align: center;
+}

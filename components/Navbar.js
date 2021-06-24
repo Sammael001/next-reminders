@@ -14,7 +14,7 @@ export default function Navbar(props) {
 
       <div className={styles.linkContainer}>
 
-        <Link href="/today">
+        <Link href="/">
           <a className={styles.navLinkButn}>
             Today
           </a>
