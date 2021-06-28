@@ -1,6 +1,7 @@
 
 
 import Link from 'next/link';
+import dayjs from "dayjs";
 
 import styles from "../styles/Navbar.module.css";
 
@@ -11,6 +12,8 @@ export default function Navbar(props) {
       <div className={styles.logoContainer}>
         <h1 className={styles.logo}>RMA Reminders</h1>
       </div>
+
+      <p className={styles.today}>{dayjs().format('ddd MMM D YYYY')}</p>
 
       <div className={styles.linkContainer}>
 

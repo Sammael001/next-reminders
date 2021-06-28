@@ -33,10 +33,10 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import dayjs from "dayjs";
-
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { sortDates } from "../vars/sortDates";
 
 import styles from "../styles/AddNew.module.css";
 
@@ -64,11 +64,11 @@ export default function AddNew(props) {
     // dates are received from date input form like so: "2021-06-17", format these like "Wed Jun 17 2021"
     myNewCaseObj.followupDate = dayjs(myNewCaseObj.followupDate).format('ddd MMM D YYYY');
     myNewCaseObj.updateTime = dayjs().valueOf(); // capture TODAY'S date/time in UTC (ex: 1624539988406) to populate updateTime
-    // console.log(myNewCaseObj);
-    // load savedReminders from localStorage, or create a blank arr if nothing stored 
+    // load savedReminders from localStorage, or create a blank arr if nothing stored
     let mySavedRems = JSON.parse(window.localStorage.getItem("savedReminders")) || [];
-    let newCopy = [...mySavedRems, myNewCaseObj]; // add new case obj into the savedReminders copy
-    window.localStorage.setItem("savedReminders", JSON.stringify(newCopy)); // add this updated copy back into state
+    mySavedRems.push(myNewCaseObj); // add new case obj to mySavedRems
+    let sorted = sortDates(mySavedRems); // returns array of all reminders, sorted by followupDate and updateTime
+    window.localStorage.setItem("savedReminders", JSON.stringify(sorted)); // put the sorted copy back into localStorage
     // set memo in localStorage, which will display on home page
     window.localStorage.setItem("reminderMemo", `Saved new reminder with Case # ${myNewCaseObj.caseNum}`);
     router.push("/allReminders"); // redirect to allReminders page

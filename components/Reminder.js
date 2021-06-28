@@ -34,10 +34,11 @@ export default function Reminder(props) {
     setIsOpen(currIsOpen => !currIsOpen);
   }
 
+  // this is called when we click to edit a reminder
   function goEdit(idToEdit){
     console.log("Editing reminder with ID ", idToEdit);
-    window.localStorage.setItem("idToEdit", idToEdit);
-    router.push("/newEdit"); // redirect to newEdit page
+    window.localStorage.setItem("idToEdit", idToEdit); // add param "idToEdit" to localStorage
+    router.push("/newEdit"); // redirect to /newEdit page
   }
 
   return (

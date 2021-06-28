@@ -25,6 +25,10 @@
   letter-spacing: 0.1rem;
   margin-left: 1rem;
 }
+.today {
+  color: white;
+  font-weight: bold;
+}
 
 .navLinkButn {
   font-family: 'Roboto Condensed', sans-serif;

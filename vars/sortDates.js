@@ -6,42 +6,50 @@
 // when sorting cases, sort by followupDate UNLESS the followupDates for 2 sequential cases are the same
 // if so, then sort by lastUpdated string
 
+import dayjs from "dayjs";
+
 let myObjArr = [
-  { name: "D", followup: "003", lastUpdated: "1201"  },
-  { name: "B", followup: "001", lastUpdated: "1430"  },
-  { name: "A", followup: "001", lastUpdated: "1120" },
-  { name: "C", followup: "002", lastUpdated: "960" }
+  { name: "D", followupDate: "003", updateTime: "1201"  },
+  { name: "B", followupDate: "001", updateTime: "1430"  },
+  { name: "A", followupDate: "001", updateTime: "1120" },
+  { name: "C", followupDate: "002", updateTime: "960" }
 ];
 
-function sortDates(arr){
+function sortDatesExample(arr){
   arr.sort((a, b) => {
-    if (a.followup === b.followup) {
-      return (a.lastUpdated - b.lastUpdated);
+    if (a.followupDate === b.followupDate) {
+      return (a.updateTime - b.updateTime);
     } else {
-      return (a.followup - b.followup);
+      return (a.followupDate - b.followupDate);
     }
   });
   return arr;
 }
 
-console.log(sortDates(myObjArr));
+// console.log(sortDates(myObjArr));
+
+function sortDates(arr){
+  arr.sort((a, b) => {
+    if (a.followupDate === b.followupDate) {
+      return (b.updateTime - a.updateTime); // sort reminders for same day with most recently edited (largest updateTime) FIRST
+    } else {
+      // convert followupDate to #, sort reminders from SMALLEST (oldest) date to LARGEST (newest) date
+      return (dayjs(a.followupDate).format('YYMMDD') - dayjs(b.followupDate).format('YYMMDD'));
+    }
+  });
+  return arr;
+}
+
+export { sortDates };
+
 // output: [
-//   {name: "A", followup: "001", lastUpdated: "1120"},
-//   {name: "B", followup: "001", lastUpdated: "1430"},
-//   {name: "C", followup: "002", lastUpdated: "960"},
-//   {name: "D", followup: "003", lastUpdated: "1201"}
+//   {name: "A", followupDate: "001", updateTime: "1120"},
+//   {name: "B", followupDate: "001", updateTime: "1430"},
+//   {name: "C", followupDate: "002", updateTime: "960"},
+//   {name: "D", followupDate: "003", updateTime: "1201"}
 // ]
 
 
-// NEXT TASKS:
-// Process RMA
-// Need More Info
-// Other Hold
-// Get Tracking
-// Send Track Num
-// Verify Delivery
-// Send Final Email
-// Await Return
 
 // caseID: "98765-98765-gi57i5wwhwru",
 // caseNum: "98765-98765",

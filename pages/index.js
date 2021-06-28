@@ -8,13 +8,11 @@ import styles from '../styles/Home.module.css';
 import Reminder from "../components/Reminder";
 import { dummyCaseData } from "../vars/fillerData";
 
-// today's reminders
-// add new
-// all reminders
-// all returns
-// search
-// upload
-// download
+// TO DO:
+// ~ create email templates component that can display on newEdit.js
+// ~~~ autopop templates with data from current formVal
+// ~ on allReminders.js, give color classes to <Reminder>s based on proximity from today's date
+// ~ create today.js page, which only displays today's reminders
 
 export default function Home() {
 
