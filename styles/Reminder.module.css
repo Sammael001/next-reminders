@@ -16,6 +16,19 @@
 .remBody > p {
   margin: 0.25rem;
 }
+.remBodyRed {
+  background-color: #ffcccc;
+  border: 1px solid #990000;
+}
+.remBodyYel {
+  background-color: #ffffcc;
+  border: 1px solid #808000;
+}
+.remBodyGrn {
+  background-color: #ccffcc;
+  border: 1px solid #006600;
+}
+
 .parentOpenSlide { /* 2) class selectively applies to parent when child is open, sets width (so parent can widen smoothly) */
   max-width: 50%;
 }

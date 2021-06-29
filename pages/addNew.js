@@ -67,7 +67,8 @@ export default function AddNew(props) {
     // load savedReminders from localStorage, or create a blank arr if nothing stored
     let mySavedRems = JSON.parse(window.localStorage.getItem("savedReminders")) || [];
     mySavedRems.push(myNewCaseObj); // add new case obj to mySavedRems
-    let sorted = sortDates(mySavedRems); // returns array of all reminders, sorted by followupDate and updateTime
+    // call our custom sortDates function, rcv back an array of all reminders, sorted by followupDate and updateTime
+    let sorted = sortDates(mySavedRems);
     window.localStorage.setItem("savedReminders", JSON.stringify(sorted)); // put the sorted copy back into localStorage
     // set memo in localStorage, which will display on home page
     window.localStorage.setItem("reminderMemo", `Saved new reminder with Case # ${myNewCaseObj.caseNum}`);

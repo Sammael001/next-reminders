@@ -10,31 +10,23 @@ export default function Navbar(props) {
     <div className={styles.navContainer}>
 
       <div className={styles.logoContainer}>
-        <h1 className={styles.logo}>RMA Reminders</h1>
+        <Link href="/">
+          <h1 className={styles.logo}>RMA Reminders</h1>
+        </Link>
       </div>
 
       <p className={styles.today}>{dayjs().format('ddd MMM D YYYY')}</p>
 
       <div className={styles.linkContainer}>
 
-        <Link href="/">
+        <Link href="/allReminders">
           <a className={styles.navLinkButn}>
-            Today
+            Reminders
           </a>
         </Link>
         <Link href="/addNew">
           <a className={styles.grnNavButn}>
             Add New
-          </a>
-        </Link>
-        <Link href="/allReminders">
-          <a className={styles.navLinkButn}>
-            All Reminders
-          </a>
-        </Link>
-        <Link href="/">
-          <a className={styles.navLinkButn}>
-            All Returns
           </a>
         </Link>
         <Link href="/">

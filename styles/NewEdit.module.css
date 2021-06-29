@@ -122,7 +122,7 @@
 }
 
 .butnBox {
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -143,6 +143,7 @@
 .redButn:hover {
   background-color: #e60000;
   color: white;
+  cursor: pointer;
 }
 
 .bluButn {
@@ -160,6 +161,7 @@
 .bluButn:hover {
   background-color: #0052cc;
   color: white;
+  cursor: pointer;
 }
 .grnButn {
   font-family: 'Roboto Condensed', sans-serif;
@@ -176,6 +178,7 @@
 .grnButn:hover {
   background-color: #008000;
   color: white;
+  cursor: pointer;
 }
 
 /* .deleteWarning {

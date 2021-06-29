@@ -8,11 +8,16 @@ import styles from '../styles/Home.module.css';
 import Reminder from "../components/Reminder";
 import { dummyCaseData } from "../vars/fillerData";
 
+//   https://sims4studio.com/thread/492/make-buyable-recolor-locked-debug
+//  (NEWER)  https://sims4studio.com/thread/7218/video-tutorial-unlock-objects-debug
+//  0x11A66	 --  Synthetic Food Serum
+//  0x11A6F	 --  Need Fixer Serum
+
 // TO DO:
-// ~ create email templates component that can display on newEdit.js
-// ~~~ autopop templates with data from current formVal
-// ~ on allReminders.js, give color classes to <Reminder>s based on proximity from today's date
-// ~ create today.js page, which only displays today's reminders
+// ~ search route 
+// ~ upload route
+// ~ download route
+
 
 export default function Home() {
 
@@ -20,24 +25,14 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.homeMenuBox}>
 
-        <Link href="/today">
+        <Link href="/allReminders">
           <a className={styles.butn}>
-            Today
+            Reminders
           </a>
         </Link>
         <Link href="/addNew">
           <a className={`${styles.butn} ${styles.borderButn}`}>
             Add New
-          </a>
-        </Link>
-        <Link href="/allReminders">
-          <a className={styles.butn}>
-            All Reminders
-          </a>
-        </Link>
-        <Link href="/">
-          <a className={styles.butn}>
-            All Returns
           </a>
         </Link>
         <Link href="/">

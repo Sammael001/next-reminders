@@ -6,7 +6,46 @@
 }
 .title {
   text-align: center;
+  margin-bottom: 0.75rem;
 }
+.filterBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.butn {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.2rem;
+  color: black;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin: 0 0.5rem;
+}
+.butn:hover {
+  color: white;
+  cursor: pointer;
+}
+.bluButn {
+  border: 2px solid #000099;
+  background-color: #99ccff;
+  box-shadow: -2px -2px 3px inset #0052cc, 3px 3px 4px inset #e6f2ff;
+}
+.bluButn:hover {
+  background-color: #0052cc;
+}
+.grnButn {
+  border: 2px solid #004d00;
+  background-color: #66ff66;
+  box-shadow: -2px -2px 3px inset #00b300, 3px 3px 4px inset #e6ffe6;
+}
+.grnButn:hover {
+  background-color: #008000;
+}
+
 .caseBox {
   display: flex;
   flex-direction: row;

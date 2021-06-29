@@ -25,6 +25,9 @@
   letter-spacing: 0.1rem;
   margin-left: 1rem;
 }
+.logo:hover {
+  cursor: pointer;
+}
 .today {
   color: white;
   font-weight: bold;

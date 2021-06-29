@@ -22,6 +22,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/router";
+import dayjs from "dayjs";
 // import Link from "next/link";
 
 import styles from "../styles/Reminder.module.css";
@@ -41,8 +42,20 @@ export default function Reminder(props) {
     router.push("/newEdit"); // redirect to /newEdit page
   }
 
+  // gives red, yel or grn color classes based on followupDate's proximity to today's date
+  function giveColorClass(){
+    let today = dayjs().format('ddd MMM D YYYY');
+    if (today === props.followupDate) {
+      return styles.remBodyYel;
+    } else if ( dayjs(props.followupDate).isBefore(dayjs(today)) ){
+      return styles.remBodyRed;
+    } else {
+      return styles.remBodyGrn;
+    }
+  }
+
   return (
-    <div className={`${styles.remBody} ${isOpen ? styles.parentOpenSlide : styles.parentClosedSlide}`}>
+    <div className={`${styles.remBody} ${giveColorClass()} ${isOpen ? styles.parentOpenSlide : styles.parentClosedSlide}`}>
       <p><span className={styles.fieldName}>Case #:</span> {props.caseNum}</p>
       <p><span className={styles.fieldName}>RMA #:</span> {props.rmaNum}</p>
       <p><span className={styles.fieldName}>Company:</span> {props.company}</p>
