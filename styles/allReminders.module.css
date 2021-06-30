@@ -56,12 +56,12 @@
 
 .memoBox {
   position: fixed;
-  top: 100px;
+  top: 15%;
   left: 25%;
   width: 50%;
   z-index: 10;
-  border: 2px solid #006600;
-  background-color: #80ff80;
+  border: 3px solid #006600;
+  background-color: #33ff33;
   font-size: 1rem;
   font-weight: bold;
   display: flex;
@@ -74,10 +74,10 @@
 }
 .memoBox > button {
   border: none;
-  background-color: #80ff80;
+  background-color: rgba(0,0,0,0);
   color: #006600;
   font-size: 1.75rem;
-  transition: all 0.5s linear;
+  transition: all 0.2s ease;
 }
 .memoBox > button:hover {
   color: #001a00;

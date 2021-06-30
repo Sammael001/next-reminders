@@ -33,7 +33,7 @@
   max-width: 50%;
 }
 .parentClosedSlide { /* 3) class selectively applies to parent when child is closed, sets width (so parent can narrow smoothly) */
-  max-width: 30%;
+  max-width: 20%;
 }
 
           /* CHILD (slider menu) classes */

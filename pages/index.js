@@ -14,9 +14,11 @@ import { dummyCaseData } from "../vars/fillerData";
 //  0x11A6F	 --  Need Fixer Serum
 
 // TO DO:
-// ~ search route 
+// ~ gif for home page
 // ~ upload route
-// ~ download route
+// ~~~ hide upload button until warning is accepted and file is added to input
+// ~ fill out dummy case data with information that demonstrates that these are examples only
+// ~ prevent snap to bottom on save?
 
 
 export default function Home() {

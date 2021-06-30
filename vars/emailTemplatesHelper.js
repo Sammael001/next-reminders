@@ -22,10 +22,11 @@
 
 
 
+// <Templates/> component calls giveText with 2 params: templateName and propObj
+// giveText switches on templateName and returns a string (the email template text) w/ relevant propObj values inserted
 
-
-function giveText(str, propObj) {
-  switch (str) {
+function giveText(templateName, propObj) {
+  switch (templateName) {
     case "Lorem Ipsum":
       return `You chose LOREM for case ${propObj.caseNum}`;
       break;
@@ -57,7 +58,7 @@ function giveText(str, propObj) {
       return `Hello, \n\nYour RMA for the replacement hardware has been processed on RMA ${propObj.rmaNum}. \n\nWe will ship in accordance with our standard RMA shipping terms (click on link for details): https://www.netscout.com/support/advanced-replacement-onsite-support-policy\n\nPlease confirm once you have received the replacement(s).\n\nRegards,\nSylvia M.\nNETSCOUT Customer Care\n1-888-357-7667`;
       break;
     case "Processed RMA: Big HD":
-      return `Hello, \n\nYour RMA ${propObj.rmaNum} for the replacement HD has been processed and will ship in accordance with our standard RMA shipping terms (click on link for details): http://www.netscout.com/advanced-replacement-or-on-site-support/\n\nPlease note that MFG has advised that P/N _____ is no longer available. We will be shipping you a upgraded drive (P/N 321-1823) which is compatible with your system.\n\nPlease let us know if you need assistance with replacing the larger drive.\n\nRegards,\nSylvia M.\nNETSCOUT Customer Care\n1-888-357-7667`;
+      return `Hello, \n\nYour RMA ${propObj.rmaNum} for the replacement HD has been processed and will ship in accordance with our standard RMA shipping terms (click on link for details): https://www.netscout.com/support/advanced-replacement-onsite-support-policy\n\nPlease note that MFG has advised that P/N _____ is no longer available. We will be shipping you a upgraded drive (P/N 321-1823) which is compatible with your system.\n\nPlease let us know if you need assistance with replacing the larger drive.\n\nRegards,\nSylvia M.\nNETSCOUT Customer Care\n1-888-357-7667`;
       break;
     case "RMA Shipped":
       return `Hello,\n\nYour replacement part/ unit on RMA ${propObj.rmaNum} has shipped.\n\nFED EX Tracking number: ${propObj.trackNum}\n\nShip date:\n\nEstimated delivery:\n\nOnce you receive the replacement part/ unit, please confirm that it was received and is working properly.\n\nRegards,\nSylvia M.\nNETSCOUT Customer Care\n1-888-357-7667`;
@@ -72,7 +73,7 @@ function giveText(str, propObj) {
       return `Hello, \n\nPlease advise us on the return of the defective hardware on RMA ${propObj.rmaNum} \n\nIf you did not receive a return label in the box with your replacement unit, please let us know. \n\n***PLEASE REFERENCE RMA # ${propObj.rmaNum} ON THE BOX AND ALL CORRESPONDENCE*** \n\n****Also please remove your SFP/XFP installed on the defective unit. \n\nLet us know if you have any questions. \n\nRegards, \nSylvia M. \nNETSCOUT Customer Care \n1-888-357-7667`;
       break;
     default:
-      return "Error!";
+      return "Something went wrong, no match for template name string";
       break;
   }
 

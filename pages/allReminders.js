@@ -88,7 +88,7 @@ export default function AllReminders() {
     <div className={styles.container}>
 
       { showMemo &&
-        <div className={styles.memoBox}>
+        <div className={styles.memoBox} onClick={dismissMemo}>
           <p>{memoText}</p>
           <button onClick={dismissMemo}><i className="fas fa-window-close"></i></button>
         </div>

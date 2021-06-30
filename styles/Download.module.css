@@ -1,0 +1,55 @@
+.container {
+  margin-top: 3.1rem; /* mandatory to prevent content from being hidden under navbar */
+  min-height: 90vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90vh;
+}
+.title {
+  text-align: center;
+}
+.bigTextArea {
+  width: 80vw;
+  height: 50vh;
+}
+.bluButn {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.2rem;
+  color: black;
+  border: 2px solid #000099;
+  background-color: #99ccff;
+  box-shadow: -2px -2px 3px inset #0052cc, 3px 3px 4px inset #e6f2ff;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin: 1rem 1rem;
+}
+.bluButn:hover {
+  background-color: #0052cc;
+  color: white;
+  cursor: pointer;
+}
+.directions {
+  margin: 0.25rem;
+}
+.padded {
+  margin: 1rem;
+  font-weight: bold;
+}
+.padded > a {
+  color: black;
+  border: 2px solid #000099;
+  background-color: #99ccff;
+  box-shadow: -2px -2px 3px inset #0052cc, 3px 3px 4px inset #e6f2ff;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+.padded > a:hover {
+  background-color: #0052cc;
+  color: white;
+  cursor: pointer;
+}

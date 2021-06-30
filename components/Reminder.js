@@ -38,8 +38,13 @@ export default function Reminder(props) {
   // this is called when we click to edit a reminder
   function goEdit(idToEdit){
     console.log("Editing reminder with ID ", idToEdit);
-    window.localStorage.setItem("idToEdit", idToEdit); // add param "idToEdit" to localStorage
-    router.push("/newEdit"); // redirect to /newEdit page
+    if (idToEdit === "00001" || idToEdit === "00002" || idToEdit === "00003") { // IDs for the dummy cases
+      window.localStorage.setItem("reminderMemo", `This case is an example case and can't be edited`);
+      router.reload(window.location.pathname); // reload page to show the reminderMemo text above
+    } else {
+      window.localStorage.setItem("idToEdit", idToEdit); // add param "idToEdit" to localStorage
+      router.push("/newEdit"); // redirect to /newEdit page
+    }
   }
 
   // gives red, yel or grn color classes based on followupDate's proximity to today's date

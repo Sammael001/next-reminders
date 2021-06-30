@@ -144,7 +144,7 @@ export default function NewEdit() {
       </div>
 
       { showMsg &&
-        <div className={styles.memoBox}>
+        <div className={styles.memoBox} onClick={() => setShowMsg(false)}>
           <p>Saved changes!</p>
           <button onClick={() => setShowMsg(false)}><i className="fas fa-window-close"></i></button>
         </div>

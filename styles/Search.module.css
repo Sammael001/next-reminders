@@ -1,0 +1,73 @@
+.container {
+  margin-top: 5rem; /* mandatory to prevent content from being hidden under navbar */
+  min-height: 90vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90vh;
+}
+.title {
+  text-align: center;
+}
+.searchForm {
+  border-radius: 0.5rem;
+  background-color: #e6e6e6;
+  border: 1px solid #404040;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .2);
+  padding: 1rem;
+  max-width: 90vw;
+  min-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.labelAndInput {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.mySelect, .lgInput {
+  margin: 0.2rem;
+  padding: 0.1rem;
+  font-size: 1rem;
+}
+.searchLabel {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.lgInput {
+  width: 80%;
+}
+.bluButn {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.2rem;
+  color: black;
+  border: 2px solid #000099;
+  background-color: #99ccff;
+  box-shadow: -2px -2px 3px inset #0052cc, 3px 3px 4px inset #e6f2ff;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin: 1rem 1rem;
+}
+.bluButn:hover {
+  background-color: #0052cc;
+  color: white;
+  cursor: pointer;
+}
+.caseBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.redSpan {
+  color: #e60000;
+}

@@ -29,19 +29,19 @@ export default function Navbar(props) {
             Add New
           </a>
         </Link>
-        <Link href="/">
+        <Link href="/search">
           <a className={styles.navLinkButn}>
             Search
           </a>
         </Link>
-        <Link href="/">
-          <a className={styles.navLinkButn}>
-            Upload
-          </a>
-        </Link>
-        <Link href="/">
+        <Link href="/download">
           <a className={styles.navLinkButn}>
             Download
+          </a>
+        </Link>
+        <Link href="/upload">
+          <a className={styles.navLinkButn}>
+            Upload
           </a>
         </Link>
 

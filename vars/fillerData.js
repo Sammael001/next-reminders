@@ -11,7 +11,7 @@
 
 const dummyCaseData = [
   {
-    caseID: "12345-12345-hg245y25y245yv2y",
+    caseID: "00001",
     caseNum: "12345-12345",
     rmaNum: "33312345",
     company: "Big Mega Corp",
@@ -33,7 +33,7 @@ const dummyCaseData = [
     notes: "these are my notes\nI have lots of notes\nI want them to appear on multiple lines\nAnd also test the scrolling ability of the slider div\nSo I added all these newlines\nthese are my notes\nI have lots of notes\nI want them to appear on multiple lines\nAnd also test the scrolling ability of the slider div\nSo I added all these newlines\nthese are my notes\nI have lots of notes\nI want them to appear on multiple lines\nAnd also test the scrolling ability of the slider div\nSo I added all these newlines"
   },
   {
-    caseID: "45678-45678-4g425y24yqeh",
+    caseID: "00002",
     caseNum: "45678-45678",
     rmaNum: "33345678",
     company: "Arasaka Industries",
@@ -55,7 +55,7 @@ const dummyCaseData = [
     notes: "these are my notes"
   },
   {
-    caseID: "98765-98765-gi57i5wwhwru",
+    caseID: "00003",
     caseNum: "98765-98765",
     rmaNum: "33398765",
     company: "CyberDyne Inc",
