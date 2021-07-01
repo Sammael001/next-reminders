@@ -20,10 +20,18 @@
 // trackNum: "11112222333333",
 // notes: "these are my notes"
 
+// Process RMA - red
+// Need More Info - orange
+// Other Hold - yellow
+// Send Tracking - green
+// Verify Delivery - cyan
+// Send Final Email - blue
+// Await Return - pink
+
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import dayjs from "dayjs";
-// import Link from "next/link";
 
 import styles from "../styles/Reminder.module.css";
 
@@ -39,7 +47,7 @@ export default function Reminder(props) {
   function goEdit(idToEdit){
     console.log("Editing reminder with ID ", idToEdit);
     if (idToEdit === "00001" || idToEdit === "00002" || idToEdit === "00003") { // IDs for the dummy cases
-      window.localStorage.setItem("reminderMemo", `This case is an example case and can't be edited`);
+      window.localStorage.setItem("reminderMemo", `This reminder is just a demo, and can't be edited`);
       router.reload(window.location.pathname); // reload page to show the reminderMemo text above
     } else {
       window.localStorage.setItem("idToEdit", idToEdit); // add param "idToEdit" to localStorage
@@ -59,6 +67,18 @@ export default function Reminder(props) {
     }
   }
 
+  // object with keys matching nextTask, and values which are the src for the paired gem image
+  const gemColors = {
+    "Process RMA": "/images/redgem.gif",
+    "Need More Info": "/images/orangegem.gif",
+    "Other Hold": "/images/yellowgem.gif",
+    "Send Tracking": "/images/greengem.gif",
+    "Verify Delivery": "/images/cyangem.gif",
+    "Send Final Email": "/images/bluegem.gif",
+    "Await Return": "/images/pinkgem.gif"
+  };
+
+
   return (
     <div className={`${styles.remBody} ${giveColorClass()} ${isOpen ? styles.parentOpenSlide : styles.parentClosedSlide}`}>
       <p><span className={styles.fieldName}>Case #:</span> {props.caseNum}</p>
@@ -67,7 +87,12 @@ export default function Reminder(props) {
       <p><span className={styles.fieldName}>Ref ID:</span> {props.refID}</p>
       <hr/>
       <p><span className={styles.fieldName}>Last Update:</span> {props.lastUpdate}</p>
-      <p><span className={styles.fieldName}>Next Task:</span> {props.nextTask}</p>
+
+      <div className={styles.dotDivHolder}>
+        <p><span className={styles.fieldName}>Next Task:</span> {props.nextTask}</p>
+        <img src={ gemColors[props.nextTask] } alt="colorDot"/>
+      </div>
+
       <p><span className={styles.fieldName}>Followup Date:</span> {props.followupDate}</p>
 
       <hr/>

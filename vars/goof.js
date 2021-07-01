@@ -97,6 +97,6 @@ export default function Reminders() {
 
 However, with the custom hook shown above, during development I was seeing the warning "Expected server HTML to contain a matching <div> in <div>" in the console every time I refreshed localhost:3000/reminders. When researching the issue I came across this blog post:
 https://www.joshwcomeau.com/react/the-perils-of-rehydration/
-which explained that I was causing a mismatch between what the server was initially rendering, and what was getting rendered on the client side, because my custom hook returned different data based on whether "window" was defined or not. This seems to be a specific NextJS issue; since vanilla React doesn't render HTML on the server-side and therefore wouldn't run into this issue.
+which explained that I was causing a mismatch between what the server was initially rendering, and what was getting rendered on the client side, because my custom hook returned different data based on whether "window" was defined or not. This seems to be a specific NextJS issue, since vanilla React doesn't render HTML on the server-side and therefore wouldn't run into this issue.
 
 My question is, are there any work-arounds simpler than the MyComponent example I started with? It's not a big hassle to run useEffect and pull data from localStorage in each individual component, or to manually write my state values into localStorage each time a component wants to save some reminder data, but any time I'm copy/pasting a lot of code I feel like there might be a better way.

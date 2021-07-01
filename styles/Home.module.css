@@ -16,30 +16,87 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url("/images/geometric-2.png");
-
-  /* width: 80vw;
-  height: 60vh; */
+  width: 90%;
+}
+.title {
+  font-family: 'Teko', sans-serif;
+  color: #0000cc;
+  font-size: 4rem;
+  letter-spacing: 0.1rem;
+  margin: 0.5rem;
+  text-shadow: 3px 3px 3px rgba(0,0,0,0.25);
+}
+.rainbowDiv {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+.title:hover, .rainbowDiv:hover {
+  cursor: pointer;
+}
+.gemAnimated {
+  animation: bounce 1s ease-in-out infinite;
 }
 
-.butn {
-  /* font-family: 'Teko', sans-serif; */
-  font-family: 'Roboto Condensed', sans-serif;
-  color: white;
-  /* border: 2px solid white; */
-  background-color: rgba(255, 255, 255, 0.35);
-  letter-spacing: 0.03rem;
-  /* font-size: 1.5rem; */
-  font-weight: bold;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  margin: 1rem;
-  transition: all 0.5s ease;
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
-.butn:hover {
-  color: black;
-  background-color: rgba(255, 255, 255, 0.75);
+
+.second {
+  animation-delay: 0.1s;
 }
-.borderButn {
-  border: 2px solid white;
+.third {
+  animation-delay: 0.2s;
 }
+.fourth {
+  animation-delay: 0.3s;
+}
+.fifth {
+  animation-delay: 0.4s;
+}
+.sixth {
+  animation-delay: 0.5s;
+}
+.seventh {
+  animation-delay: 0.6s;
+}
+.eighth {
+  animation-delay: 0.7s;
+}
+
+/* <div className={styles.firstDiv}>
+  <img src="/images/redgem.gif" alt="gem" />
+  <img src="/images/pinkgem.gif" alt="gem" />
+</div>
+<div className={styles.secondDiv}>
+  <img src="/images/orangegem.gif" alt="gem" />
+  <img src="/images/bluegem.gif" alt="gem" />
+</div>
+<div className={styles.thirdDiv}>
+  <img src="/images/yellowgem.gif" alt="gem" />
+  <img src="/images/cyangem.gif" alt="gem" />
+</div>
+<div className={styles.fourthDiv}>
+  <img src="/images/greengem.gif" alt="gem" />
+</div> */
+
+/* .firstDiv {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.secondDiv {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.thirdDiv {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+} */

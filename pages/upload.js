@@ -1,8 +1,11 @@
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import styles from "../styles/Upload.module.css";
+import Link from "next/link";
 
 export default function Upload() {
+  const router = useRouter();
   const [ fileData, setFileData ] = useState(null);
 
   const uploadToClient = (evt) => {
@@ -22,15 +25,23 @@ export default function Upload() {
 
   const uploadToStorage = () => {
     console.log("...Uploading to storage...");
+    window.localStorage.setItem("reminderMemo", "Successfully uploaded reminder data from backup!");
     window.localStorage.setItem("savedReminders", JSON.stringify(fileData));
+    router.push("/allReminders");
   };
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Upload Reminder Backup File</h1>
-      <input type="file" name="myFileUpload" accept=".txt" onChange={uploadToClient} />
-      <p>Warning! The data uploaded here will replace all reminder data stored in this browser!</p>
-      <button className={styles.bluButn} type="submit" onClick={uploadToStorage}>Upload</button>
+      <p className={styles.directions}>This form will accept reminder backup .txt files generated <Link href="/download"><a>here</a></Link>, and will upload their data to local browser storage.</p>
+
+      <div className={styles.uploadForm}>
+        <input type="file" name="myFileUpload" accept=".txt" onChange={uploadToClient} />
+        <h2 className={styles.warning}>Warning!</h2>
+        <h3 className={styles.warning}>Uploads will replace <span className={styles.emphasis}>all</span> reminder data stored in this browser!</h3>
+        <button className={styles.bluButn} type="submit" onClick={uploadToStorage} disabled={!fileData}>Upload</button>
+      </div>
+
     </div>
   );
 };

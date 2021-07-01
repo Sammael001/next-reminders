@@ -11,7 +11,7 @@
   border: 1px solid #404040;
   box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .2);
   transition: all 0.7s linear; /* 1) give base parent class a transition prop */
-  min-width: 300px;
+  min-width: 330px;
 }
 .remBody > p {
   margin: 0.25rem;
@@ -33,7 +33,7 @@
   max-width: 50%;
 }
 .parentClosedSlide { /* 3) class selectively applies to parent when child is closed, sets width (so parent can narrow smoothly) */
-  max-width: 20%;
+  max-width: 30%;
 }
 
           /* CHILD (slider menu) classes */
@@ -86,4 +86,26 @@
 .dottedHr {
   width: 90%;
   border-top: 5px dotted #4d4d4d;
+}
+.dotDivHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.dotDivHolder > img {
+  width: 20px;
+  height: 20px;
+}
+.dotDivHolder > p {
+  margin: 0.15rem;
+}
+
+.colorDot {
+  color: black;
+  background-color: red;
+  font-size: 1.25rem;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: -2px -2px 2px inset rgba(0, 0, 0, 1), 2px 2px 2px inset rgba(0, 0, 0, 1);
 }

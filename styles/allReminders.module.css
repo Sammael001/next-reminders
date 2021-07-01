@@ -38,12 +38,12 @@
   background-color: #0052cc;
 }
 .grnButn {
-  border: 2px solid #004d00;
-  background-color: #66ff66;
-  box-shadow: -2px -2px 3px inset #00b300, 3px 3px 4px inset #e6ffe6;
+  border: 2px solid #4d004d;
+  background-color: #ff99ff;
+  box-shadow: -2px -2px 3px inset #800080, 3px 3px 4px inset #ffe6ff;
 }
 .grnButn:hover {
-  background-color: #008000;
+  background-color: #800080;
 }
 
 .caseBox {
@@ -61,7 +61,7 @@
   width: 50%;
   z-index: 10;
   border: 3px solid #006600;
-  background-color: #33ff33;
+  background-color: #66ff66;
   font-size: 1rem;
   font-weight: bold;
   display: flex;
@@ -83,4 +83,10 @@
   color: #001a00;
   transform: scale(1.2);
   cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .caseBox {
+    justify-content: center;
+  }
 }

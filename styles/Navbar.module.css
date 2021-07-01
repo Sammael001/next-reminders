@@ -66,42 +66,31 @@
   color: white;
 }
 
+.smallNavContainer {
+  display: none;
+}
 
-/*
-.blue-button {
-  border: 2px solid #000099;
-  background-color: #99ccff;
-  box-shadow: -2px -2px 3px inset #0052cc, 3px 3px 4px inset #e6f2ff;
-  transition: all 0.5s ease;
+@media only screen and (max-width: 700px) {
+  .navContainer {
+    display: none;
+  }
+  .smallNavContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* sticky nav */
+    top: 0; /* sticky nav */
+    z-index: 10; /* sticky nav */
+    background: url("/images/geometric-2.png");
+    background-color: blue;
+    height: 50px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    width: 100%;
+  }
+  .logo {
+    font-size: 1.7rem;
+  }
 }
-.blue-button:hover {
-  background-color: #0052cc;
-}
-.grn-button {
-  border: 2px solid #008000;
-  background-color: #66ff66;
-  box-shadow: -2px -2px 3px inset #00b300, 3px 3px 4px inset #e6ffe6;
-  transition: all 0.5s ease;
-}
-.grn-button:hover {
-  background-color: #00b300;
-}
-.yel-button {
-  border: 2px solid #664400;
-  background-color: #ffff80;
-  box-shadow: -2px -2px 3px inset #b38f00, 3px 3px 4px inset #ffffe6;
-  transition: all 0.5s ease;
-}
-.yel-button:hover {
-  background-color: #b38f00;
-}
-.red-button {
-  border: 2px solid #4d0000;
-  background-color: #ff8080;
-  box-shadow: -2px -2px 3px inset #cc0000, 3px 3px 4px inset #ffe6e6;
-  transition: all 0.5s ease;
-}
-.red-button:hover {
-  background-color: #cc0000;
-}
- */

@@ -3,8 +3,7 @@
 // Process RMA
 // Need More Info
 // Other Hold
-// Get Tracking
-// Send Track Num
+// Send Tracking
 // Verify Delivery
 // Send Final Email
 // Await Return
@@ -107,8 +106,7 @@ export default function AddNew(props) {
             <option value="Process RMA">Process RMA</option>
             <option value="Need More Info">Need More Info</option>
             <option value="Other Hold">Other Hold</option>
-            <option value="Get Tracking">Get Tracking</option>
-            <option value="Send Track Num">Send Track Num</option>
+            <option value="Send Tracking">Send Tracking</option>
             <option value="Verify Delivery">Verify Delivery</option>
             <option value="Send Final Email">Send Final Email</option>
             <option value="Await Return">Await Return</option>

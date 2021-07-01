@@ -14,44 +14,31 @@ import { dummyCaseData } from "../vars/fillerData";
 //  0x11A6F	 --  Need Fixer Serum
 
 // TO DO:
-// ~ gif for home page
-// ~ upload route
-// ~~~ hide upload button until warning is accepted and file is added to input
-// ~ fill out dummy case data with information that demonstrates that these are examples only
-// ~ prevent snap to bottom on save?
+// host site on Vercel :D
 
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
 
   return (
     <div className={styles.container}>
       <div className={styles.homeMenuBox}>
 
-        <Link href="/allReminders">
-          <a className={styles.butn}>
-            Reminders
-          </a>
-        </Link>
-        <Link href="/addNew">
-          <a className={`${styles.butn} ${styles.borderButn}`}>
-            Add New
-          </a>
-        </Link>
-        <Link href="/">
-          <a className={styles.butn}>
-            Search
-          </a>
-        </Link>
-        <Link href="/">
-          <a className={styles.butn}>
-            Upload
-          </a>
-        </Link>
-        <Link href="/">
-          <a className={styles.butn}>
-            Download
-          </a>
-        </Link>
+        <h1 className={styles.title} onClick={() => router.push("/allReminders")}>RMA Reminders</h1>
+
+        <div className={styles.rainbowDiv} onClick={() => router.push("/allReminders")}>
+
+          <img className={styles.gemAnimated} src="/images/redgem.gif" alt="gem" />
+          <img className={`${styles.gemAnimated} ${styles.second}`} src="/images/orangegem.gif" alt="gem" />
+          <img className={`${styles.gemAnimated} ${styles.third}`} src="/images/yellowgem.gif" alt="gem" />
+          <img className={`${styles.gemAnimated} ${styles.fourth}`} src="/images/greengem.gif" alt="gem" />
+          <img className={`${styles.gemAnimated} ${styles.fifth}`} src="/images/cyangem.gif" alt="gem" />
+          <img className={`${styles.gemAnimated} ${styles.sixth}`} src="/images/bluegem.gif" alt="gem" />
+          <img className={`${styles.gemAnimated} ${styles.seventh}`} src="/images/purplegem.gif" alt="gem" />
+          <img className={`${styles.gemAnimated} ${styles.eighth}`} src="/images/pinkgem.gif" alt="gem" />
+
+        </div>
 
       </div>
     </div>
