@@ -14,7 +14,12 @@ import { dummyCaseData } from "../vars/fillerData";
 //  0x11A6F	 --  Need Fixer Serum
 
 // TO DO:
+// fix favicon
+// remove img tags
 // host site on Vercel :D
+
+// NOTE TO SELF: when switching from <img> to <Image> tags, saw edges of gem images from disappearing during animation
+// to resolve, it was necessary to remove animation classes from gem <Image>s, wrap each <Image> in its own parent <div>, and animate the parent
 
 import { useRouter } from "next/router";
 
@@ -29,14 +34,31 @@ export default function Home() {
 
         <div className={styles.rainbowDiv} onClick={() => router.push("/allReminders")}>
 
-          <img className={styles.gemAnimated} src="/images/redgem.gif" alt="gem" />
-          <img className={`${styles.gemAnimated} ${styles.second}`} src="/images/orangegem.gif" alt="gem" />
-          <img className={`${styles.gemAnimated} ${styles.third}`} src="/images/yellowgem.gif" alt="gem" />
-          <img className={`${styles.gemAnimated} ${styles.fourth}`} src="/images/greengem.gif" alt="gem" />
-          <img className={`${styles.gemAnimated} ${styles.fifth}`} src="/images/cyangem.gif" alt="gem" />
-          <img className={`${styles.gemAnimated} ${styles.sixth}`} src="/images/bluegem.gif" alt="gem" />
-          <img className={`${styles.gemAnimated} ${styles.seventh}`} src="/images/purplegem.gif" alt="gem" />
-          <img className={`${styles.gemAnimated} ${styles.eighth}`} src="/images/pinkgem.gif" alt="gem" />
+          <div className={`${styles.gemContainer}`}>
+            <Image src="/images/redgem.gif" alt="gem" width={32} height={32} />
+          </div>
+          <div className={`${styles.gemContainer} ${styles.second}`}>
+            <Image src="/images/orangegem.gif" alt="gem" width={32} height={32} />
+          </div>
+          <div className={`${styles.gemContainer} ${styles.third}`}>
+            <Image src="/images/yellowgem.gif" alt="gem" width={32} height={32} />
+          </div>
+          <div className={`${styles.gemContainer} ${styles.fourth}`}>
+            <Image src="/images/greengem.gif" alt="gem" width={32} height={32} />
+          </div>
+          <div className={`${styles.gemContainer} ${styles.fifth}`}>
+            <Image src="/images/cyangem.gif" alt="gem" width={32} height={32} />
+          </div>
+          <div className={`${styles.gemContainer} ${styles.sixth}`}>
+            <Image src="/images/bluegem.gif" alt="gem" width={32} height={32} />
+          </div>
+          <div className={`${styles.gemContainer} ${styles.seventh}`}>
+            <Image src="/images/purplegem.gif" alt="gem" width={32} height={32} />
+          </div>
+          <div className={`${styles.gemContainer} ${styles.eighth}`}>
+            <Image src="/images/pinkgem.gif" alt="gem" width={32} height={32} />
+          </div>
+
 
         </div>
 

@@ -30,13 +30,18 @@
   width: 300px;
   display: flex;
   justify-content: space-around;
+
 }
+.gemContainer {
+  /* width: 32px;
+  height: 32px; */
+  animation: bounce 1s ease-in-out infinite;
+}
+
 .title:hover, .rainbowDiv:hover {
   cursor: pointer;
 }
-.gemAnimated {
-  animation: bounce 1s ease-in-out infinite;
-}
+
 
 @keyframes bounce {
   0%, 100% {

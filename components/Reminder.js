@@ -90,7 +90,7 @@ export default function Reminder(props) {
 
       <div className={styles.dotDivHolder}>
         <p><span className={styles.fieldName}>Next Task:</span> {props.nextTask}</p>
-        <img src={ gemColors[props.nextTask] } alt="colorDot"/>
+        <Image src={ gemColors[props.nextTask] } alt="colorDot" width={20} height={20}/>
       </div>
 
       <p><span className={styles.fieldName}>Followup Date:</span> {props.followupDate}</p>
