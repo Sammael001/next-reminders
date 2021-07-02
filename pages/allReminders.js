@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from 'next/image';
 import dayjs from "dayjs";
 
-import styles from '../styles/AllReminders.module.css';
+import styles from "../styles/AllReminders2.module.css";
 import Reminder from "../components/Reminder";
 import { dummyCaseData } from "../vars/fillerData";
 

@@ -1,0 +1,92 @@
+.container {
+  margin-top: 3.1rem; /* mandatory to prevent content from being hidden under navbar */
+  min-height: 90vh;
+  padding: 0.5rem 0.5rem;
+  height: 90vh;
+}
+.title {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.filterBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.butn {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.2rem;
+  color: black;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin: 0 0.5rem;
+}
+.butn:hover {
+  color: white;
+  cursor: pointer;
+}
+.bluButn {
+  border: 2px solid #000099;
+  background-color: #99ccff;
+  box-shadow: -2px -2px 3px inset #0052cc, 3px 3px 4px inset #e6f2ff;
+}
+.bluButn:hover {
+  background-color: #0052cc;
+}
+.grnButn {
+  border: 2px solid #4d004d;
+  background-color: #ff99ff;
+  box-shadow: -2px -2px 3px inset #800080, 3px 3px 4px inset #ffe6ff;
+}
+.grnButn:hover {
+  background-color: #800080;
+}
+
+.caseBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.memoBox {
+  position: fixed;
+  top: 15%;
+  left: 25%;
+  width: 50%;
+  z-index: 10;
+  border: 3px solid #006600;
+  background-color: #66ff66;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.memoBox > p, .memoBox > button {
+  margin: 1rem 0.5rem;
+}
+.memoBox > button {
+  border: none;
+  background-color: rgba(0,0,0,0);
+  color: #006600;
+  font-size: 1.75rem;
+  transition: all 0.2s ease;
+}
+.memoBox > button:hover {
+  color: #001a00;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .caseBox {
+    justify-content: center;
+  }
+}
