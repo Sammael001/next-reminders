@@ -57,7 +57,7 @@ export default function Templates(props) {
         <div className={styles.buttonBox}>
           <p className={styles.buttonTitle}>Misc</p>
           <button className={styles.bluButn} onClick={() => pickTemplate("Cheat Sheet")}>Cheat Sheet</button>
-          <button className={styles.bluButn} onClick={() => pickTemplate("Intl RMA Inquiry to Brad")}>Intl RMA</button>
+          <button className={styles.bluButn} onClick={() => pickTemplate("Intl RMA Inquiry to Brad")}>Int&apos;l RMA</button>
           <button className={styles.bluButn} onClick={() => pickTemplate("IoR Inquiry for Cust")}>IoR</button>
         </div>
 
