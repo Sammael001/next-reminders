@@ -2,8 +2,8 @@
 // EMAIL TEMPLATES:
 
 // MISC: Cheat Sheet
-// MISC: Int'l RMA (inquiry to Brad)
-// MISC: Int'l RMA (IoR inquiry to cust)
+// MISC: Intl RMA (inquiry to Brad)
+// MISC: Intl RMA (IoR inquiry to cust)
 
 // Func Equivalent: inquiry to MFG
 // Func Equivalent: email to cust
@@ -36,7 +36,7 @@ function giveText(templateName, propObj) {
     case "Cheat Sheet":
       return `International/Whole Unit RMAs - Shipping Instructions: \nPLS SEND RETURN LABEL; PLEASE SHIP DDP - CHANGE COMMERCIAL INV VALUE TO OUR COST \n\nIf Customs Docs Needed: \nPLS FWD CUSTOMS/INTL DOCS TO email.address@netscout.com BEFORE SHIPPING; PLS SEND RETURN LABEL; PLEASE SHIP DDP - CHANGE COMMERCIAL INV VALUE TO OUR COST \n\n   Line 2.1 / INCOMING LINE: \n[[ Actions ]] > Installation Details > [ Source Transactions Details ] \nPaste Item Instance in field for Instance Num \n\n   Line 1.1..0 *or* Line 1 / OUTGOING LINE: \n[[ Actions ]] > Installation Details > [ NON Source Transaction Details ] \nDelete Item # in Item field \nCopy entire Item # from IB and paste into Item field \nEnter Quantity: 1 \nCopy Item Instance # from IB and paste into Instance Num field \nClick [ Replace/Upgrade ] tab in window below \nClick in field for Relationship and field for Inventory Item (they will autopopulate)`;
       break;
-    case "Int'l RMA Inquiry to Brad":
+    case "Intl RMA Inquiry to Brad":
       return `Hello,\n\nToday I received a RMA for ${propObj.partNeeded}, going to XX_COUNTRY_XX, for customer ${propObj.company}.\n\nCase: ${propObj.caseNum} \nDefective unit S/N: ${propObj.defectSN} \nPart Required: ${propObj.partNeeded} \n\nThe customer is requesting this RMA to be shipped to the following address: \n\n${propObj.shipAddress} \n\nShould we contact the customer and ask if they agree to be the IoR?`;
       break;
     case "IoR Inquiry for Cust":
@@ -46,7 +46,7 @@ function giveText(templateName, propObj) {
       return `Hello Depot Team,\n\nWe have received an RMA for whole unit: ${propObj.partNeeded} (S/N ${propObj.defectSN}) on Case # ${propObj.caseNum}.\n\nThe last RMA we shipped for a ${propObj.partNeeded} was RMA # OLD_RMA_NUM which shipped on OLD_RMA_DATE. The defective unit with S/N ${propObj.defectSN} is AGE_OF_UNIT years old.\n\nPlease let us know if we have ${propObj.partNeeded} in stock. If not, please advise the correct functional equivalent model number.\n\nThanks in advance for your assistance.`;
       break;
     case "Func Equiv Inquiry to SE/Cust":
-      return `Hello,\n\nFor defective S/N ${propObj.defectSN} (RMA Case: ${propObj.caseNum} - ${propObj.company} - MC # MASTERCARE_NUM ), MFG has advised that they cannot ship a model DEFECT_MODEL.\n\nThey request we ship a functional equivalent - model ${propObj.partNeeded}.\n\nORIGINAL MODEL:  DEFECT_MODEL | DEFECT_MODEL_DESCRIPTION \nFunctional equivalent MODEL:  ${propObj.partNeeded} | FUNC_EQUIV_MODEL_DESCRIPTION\n\n1)   Please check with the customer and make sure that they are willing to receive this functional equivalent as a replacement.\n2)   IF THERE IS AN ESU attached to the customer's original unit, please also check to make sure that the functional equivalent is compatible with their ESU.\n3)   Please also advise if the customer was using SFPs in the old unit. If not, we must ship SFPs with this replacement unit, and will need to know whether the data lines were running on copper/UTC or fiber in the old unit.\n\nOnce you advise us regarding the above three questions, we will proceed with the RMA.\n\nIf you have any questions, please let us know. `;
+      return `Hello,\n\nFor defective S/N ${propObj.defectSN} (RMA Case: ${propObj.caseNum} - ${propObj.company} - MC # MASTERCARE_NUM ), MFG has advised that they cannot ship a model DEFECT_MODEL.\n\nThey request we ship a functional equivalent - model ${propObj.partNeeded}.\n\nORIGINAL MODEL:  DEFECT_MODEL | DEFECT_MODEL_DESCRIPTION \nFunctional equivalent MODEL:  ${propObj.partNeeded} | FUNC_EQUIV_MODEL_DESCRIPTION\n\n1)   Please check with the customer and make sure that they are willing to receive this functional equivalent as a replacement.\n2)   IF THERE IS AN ESU attached to the customers original unit, please also check to make sure that the functional equivalent is compatible with their ESU.\n3)   Please also advise if the customer was using SFPs in the old unit. If not, we must ship SFPs with this replacement unit, and will need to know whether the data lines were running on copper/UTC or fiber in the old unit.\n\nOnce you advise us regarding the above three questions, we will proceed with the RMA.\n\nIf you have any questions, please let us know. `;
       break;
     case "Need More Info: Parts":
       return `In order to process your Return Material Authorization for replacement part(s), we require the following information: \n\nCompany name: \nSite address: \nContact name: \nPhone number: \nEmail Address: \n\nReplacement Part number needed: \nQuantity needed: \nPart no. description: \nIf RMA for Defective Hard Drive - HD capacity: \nSoftware Version: \n\nSpecial instructions: \n\nSerial number of Defective Unit: \nModel No. of Defective Unit: `;

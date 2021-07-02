@@ -29,8 +29,8 @@ export default function Templates(props) {
   }
 
   // MISC: Cheat Sheet
-  // MISC: Int'l RMA (inquiry to Brad)
-  // MISC: Int'l RMA (IoR inquiry to cust)
+  // MISC: Intl RMA (inquiry to Brad)
+  // MISC: Intl RMA (IoR inquiry to cust)
 
   // Func Equivalent: inquiry to MFG
   // Func Equivalent: email to cust
@@ -57,7 +57,7 @@ export default function Templates(props) {
         <div className={styles.buttonBox}>
           <p className={styles.buttonTitle}>Misc</p>
           <button className={styles.bluButn} onClick={() => pickTemplate("Cheat Sheet")}>Cheat Sheet</button>
-          <button className={styles.bluButn} onClick={() => pickTemplate("Int'l RMA Inquiry to Brad")}>Int'l RMA</button>
+          <button className={styles.bluButn} onClick={() => pickTemplate("Intl RMA Inquiry to Brad")}>Intl RMA</button>
           <button className={styles.bluButn} onClick={() => pickTemplate("IoR Inquiry for Cust")}>IoR</button>
         </div>
 
