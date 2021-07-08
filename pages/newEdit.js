@@ -165,11 +165,6 @@ export default function NewEdit() {
               <input className={styles.medInput} name="rmaNum" type="text" value={formVal.rmaNum} onChange={handleChange}/>
             </label>
 
-            <label htmlFor="company">
-              <span className={styles.copySpan} id="company" onClick={copyToClipboard}>Company: </span>
-              <input className={styles.lgInput} name="company" type="text" value={formVal.company} onChange={handleChange} required />
-            </label>
-
             <label htmlFor="refID">
               <span className={styles.copySpan} id="refID" onClick={copyToClipboard}>ref_ID #: </span>
               <input className={styles.lgInput} name="refID" type="text" value={formVal.refID} onChange={handleChange} required />
@@ -194,6 +189,11 @@ export default function NewEdit() {
             </label>
 
             <hr className={styles.myHr}/>
+
+            <label htmlFor="company">
+              <span className={styles.copySpan} id="company" onClick={copyToClipboard}>Company: </span>
+              <input className={styles.lgInput} name="company" type="text" value={formVal.company} onChange={handleChange} required />
+            </label>
 
             <label htmlFor="partNeeded">
               <span className={styles.copySpan} id="partNeeded" onClick={copyToClipboard}>Part Needed: </span>

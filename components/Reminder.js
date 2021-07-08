@@ -85,7 +85,14 @@ export default function Reminder(props) {
       <p><span className={styles.fieldName}>RMA #:</span> {props.rmaNum}</p>
       <p><span className={styles.fieldName}>Company:</span> {props.company}</p>
       <p><span className={styles.fieldName}>Ref ID:</span> {props.refID}</p>
-      <hr/>
+
+      <hr className={styles.regHr}/>
+
+      <p><span className={styles.fieldName}>Part Needed:</span> {props.partNeeded}</p>
+      <p><span className={styles.fieldName}>Defective S/N:</span> {props.defectSN}</p>
+
+      <hr className={styles.regHr}/>
+
       <p><span className={styles.fieldName}>Last Update:</span> {props.lastUpdate}</p>
 
       <div className={styles.dotDivHolder}>
@@ -95,7 +102,8 @@ export default function Reminder(props) {
 
       <p><span className={styles.fieldName}>Followup Date:</span> {props.followupDate}</p>
 
-      <hr/>
+      <hr className={styles.regHr}/>
+
       <div className={styles.butnHolder}>
         <span className={styles.iconButn} onClick={toggleSlide}>
           <i className={ isOpen ? "fas fa-minus-square" : "fas fa-plus-square" }></i>
@@ -107,10 +115,9 @@ export default function Reminder(props) {
 
       <div className={`${styles.slideDefaults} ${isOpen ? styles.showSlide : styles.hideSlide}`}>
         <hr className={styles.myHr}/>
-        <p><span className={styles.fieldName}>Part Needed:</span> {props.partNeeded}</p>
-        <p><span className={styles.fieldName}>Defective S/N:</span> {props.defectSN}</p>
+
         <p><span className={styles.fieldName}>Warehouse:</span> {props.warehouse}</p>
-        <hr className={styles.myHr}/>
+
         <p><span className={styles.fieldName}>Return:</span> {props.return}</p>
         <p><span className={styles.fieldName}>Premium:</span> {props.premium}</p>
         <p><span className={styles.fieldName}>Encrypted:</span> {props.encrypted}</p>

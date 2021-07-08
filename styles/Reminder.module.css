@@ -80,8 +80,14 @@
   cursor: pointer;
   transform: scale(1.2);
 }
+.regHr {
+  border-top: 2px solid rgba(0,0,0,0.25);
+  border-bottom: none;
+}
 .myHr {
   width: 100%;
+  border-top: 2px solid rgba(0,0,0,0.25);
+  border-bottom: none;
 }
 .dottedHr {
   width: 90%;

@@ -39,8 +39,11 @@ import { sortDates } from "../vars/sortDates";
 
 import styles from "../styles/AddNew.module.css";
 
+const today = dayjs().format('YYYY MM DD').replace(/ /g, "-");
+// console.log(today);
+
 // init empty obj with all keys we want to fill
-const blankFormObj = { caseNum: "", rmaNum: "", company: "", refID: "", nextTask: "", followupDate: "", partNeeded: "", defectSN: "", warehouse: "", return: "TBD", premium: "", encrypted: "N/A", shipAddress: "", contactInfo: "", specialIns: "", ibaInfo: "", trackNum: "", notes: "", lastUpdate: "", updateTime: "" };
+const blankFormObj = { caseNum: "", rmaNum: "", company: "", refID: "", nextTask: "Process RMA", followupDate: today, partNeeded: "", defectSN: "", warehouse: "", return: "TBD", premium: "", encrypted: "N/A", shipAddress: "", contactInfo: "", specialIns: "", ibaInfo: "", trackNum: "", notes: "", lastUpdate: "", updateTime: "" };
 
 
 export default function AddNew(props) {
@@ -90,11 +93,6 @@ export default function AddNew(props) {
           <input className={styles.medInput} name="rmaNum" type="text" value={formVal.rmaNum} onChange={handleChange}/>
         </label>
 
-        <label htmlFor="company">
-          <span className={styles.redSpan}>Company: </span>
-          <input className={styles.lgInput} name="company" type="text" value={formVal.company} onChange={handleChange} required />
-        </label>
-
         <label htmlFor="refID">
           <span className={styles.redSpan}>ref_ID #: </span>
           <input className={styles.lgInput} name="refID" type="text" value={formVal.refID} onChange={handleChange} required />
@@ -119,6 +117,11 @@ export default function AddNew(props) {
         </label>
 
         <hr className={styles.myHr}/>
+        
+        <label htmlFor="company">
+          <span className={styles.redSpan}>Company: </span>
+          <input className={styles.lgInput} name="company" type="text" value={formVal.company} onChange={handleChange} required />
+        </label>
 
         <label htmlFor="partNeeded">
           <span className={styles.redSpan}>Part Needed: </span>
