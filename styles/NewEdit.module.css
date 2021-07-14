@@ -116,6 +116,12 @@
 .copySpan:active {
   color: #ff9900;
   font-size: 1.1rem;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.copySpanClicked {
+  color: #ff9900;
+  font-size: 1.1rem;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .redWarning {

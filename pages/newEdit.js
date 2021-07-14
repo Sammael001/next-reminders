@@ -80,10 +80,14 @@ export default function NewEdit() {
 
   // called by clicking a span for a copyable input field
   function copyToClipboard(evt){
+    evt.target.className = styles.copySpanClicked; // set className to an orange/highlighted style after clicking...
     // we set the id prop on each clickable span, to the key we want to access inside formVal
     // EX: <span id="caseNum" onClick={copyToClipboard}>
     // so evt.target.id === "caseNum", and formval[evt.target.id] will be "123456-234567" or w/e
     navigator.clipboard.writeText(formVal[evt.target.id]); // navigator.clipboard.writeText() copies that value to the clipboard
+    setTimeout(() => {
+      evt.target.className = styles.copySpan; //...then set back to normal copySpan style 0.25s later
+    }, 250);
   }
 
   // called when we save changes
