@@ -62,7 +62,7 @@ const dummyCaseData = [
     company: "CyberDyne Inc",
     refID: "ref:_00LEBJJ3b._5004T8oGRU:ref",
     lastUpdate: "This is an EXAMPLE reminder",
-    nextTask: "Need More Info",
+    nextTask: "Await Tracking",
     followupDate: dayjs().add(7, 'day').format('ddd MMM D YYYY'),
     partNeeded: "1 whole unit 4595/DS",
     defectSN: "NS7181290034",

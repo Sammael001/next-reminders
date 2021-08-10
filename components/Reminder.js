@@ -21,8 +21,8 @@
 // notes: "these are my notes"
 
 // Process RMA - red
-// Need More Info - orange
-// Other Hold - yellow
+// Other Hold - orange
+// Await Tracking - yellow
 // Send Tracking - green
 // Verify Delivery - cyan
 // Send Final Email - blue
@@ -70,8 +70,8 @@ export default function Reminder(props) {
   // object with keys matching nextTask, and values which are the src for the paired gem image
   const gemColors = {
     "Process RMA": "/images/redgem.gif",
-    "Need More Info": "/images/orangegem.gif",
-    "Other Hold": "/images/yellowgem.gif",
+    "Other Hold": "/images/orangegem.gif",
+    "Await Tracking": "/images/yellowgem.gif",
     "Send Tracking": "/images/greengem.gif",
     "Verify Delivery": "/images/cyangem.gif",
     "Send Final Email": "/images/bluegem.gif",

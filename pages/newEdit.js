@@ -178,8 +178,8 @@ export default function NewEdit() {
               <span>Next Task: </span>
               <select name="nextTask" value={formVal.nextTask} onChange={handleChange}>
                 <option value="Process RMA">Process RMA</option>
-                <option value="Need More Info">Need More Info</option>
                 <option value="Other Hold">Other Hold</option>
+                <option value="Await Tracking">Await Tracking</option>
                 <option value="Send Tracking">Send Tracking</option>
                 <option value="Verify Delivery">Verify Delivery</option>
                 <option value="Send Final Email">Send Final Email</option>
