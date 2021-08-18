@@ -1,5 +1,5 @@
 .container {
-  margin-top: 4rem; /* mandatory to prevent content from being hidden under navbar */
+  margin-top: 4rem; /* this is mandatory to prevent content from being hidden under navbar */
   padding: 0.5rem 0.5rem;
   display: flex;
   flex-direction: column;
