@@ -8,4 +8,4 @@ Reminder data is saved to local browser storage. The app also allows users to do
 
 This app was created with [NextJS](https://nextjs.org/) and create-next-app, and uses React Hooks. [DayJS](https://day.js.org/) is used for date parsing and manipulation.
 
-Visit the live app [here](https://rma-reminders.vercel.app/).
+Visit the live app [here](https://rmareminders.vercel.app/).
